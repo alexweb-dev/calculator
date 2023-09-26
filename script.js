@@ -3,7 +3,7 @@ const operatorButton = document.querySelectorAll('.operator');
 const equalButton = document.querySelector('#equal');
 const deleteAllButton = document.querySelector('#deleteAll');
 const deleteCharButton = document.querySelector('#deleteChar');
-const AllButton = document.querySelectorAll('.buttons');
+const allButton = document.querySelectorAll('.buttons');
 const moreButton = document.querySelector('#more');
 const lessButton = document.querySelector('#less');
 const multipliedButton = document.querySelector('#multiplied');
@@ -72,6 +72,11 @@ add1Button.addEventListener('click', function () {
 
  add9Button.addEventListener('click', function () {
     showResult.append(9);
+ 
+ });
+
+ dotButton.addEventListener('click', function () {
+    showResult.append(".");
  
  });
 
