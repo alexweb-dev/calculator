@@ -106,12 +106,16 @@ dividedButton.addEventListener('click', function () {
  });
 
  equalButton.addEventListener('click', function () {
-    resultString = showResult.innerHTML.split(' ');
+    resultString = showResult.innerHTML.trim().split(' ');
+
+    
 
     let resultNumber = 0;
     let resultOperator = "";
-        
-    for (let i = 10; i < resultString.length; i++) {
+
+    //console.log(showResult.innerHTML, resultString);
+    for (let i = 0; i < resultString.length; i++) {
+        console.log(resultString[i]);
         if (resultString[i] === "+") {
             resultOperator = "+";
         }
@@ -128,7 +132,7 @@ dividedButton.addEventListener('click', function () {
             resultOperator = "%";
         }
         else{
-            if (i == 10) {
+            if (i == 0) {
                 resultNumber = parseFloat(resultString[i]);              
             }
             else{
@@ -148,7 +152,7 @@ dividedButton.addEventListener('click', function () {
                         resultNumber = resultNumber / parseFloat(resultString[i]);
                     break;
                     case "%":
-                        resultNumber = resultNumber % parseFloat(resultString[i]);
+                        resultNumber =  parseFloat(resultString[i] / 100) ;
                     break;
                    /* case "":
                         resultNumber = parseFloat(resultString[i]);
@@ -162,6 +166,7 @@ dividedButton.addEventListener('click', function () {
     }
     resultNumber = resultNumber.toFixed(5);
     showResult.innerHTML = resultNumber;
+    //  console.log(resultNumber);
  });
  
  deleteCharButton.addEventListener('click', function () {
